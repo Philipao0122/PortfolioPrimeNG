@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-sans text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-900 transition-colors duration-300;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold leading-tight;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+  
+  a {
+    @apply text-primary-600 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-300 transition-colors;
+  }
+}
+
+@layer components {
+  .section {
+    @apply py-16 md:py-24;
+  }
+  
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .btn {
+    @apply px-6 py-3 rounded-lg font-medium transition-all duration-300 inline-block;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white shadow-md hover:shadow-lg;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary-600 hover:bg-secondary-700 text-white shadow-md hover:shadow-lg;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white;
+  }
+  
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-shadow p-6;
+  }
+}
+
+.section-fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
